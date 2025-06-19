@@ -157,6 +157,10 @@ async function sendMessage(recipientId: string): Promise<void> {
       ciphertext: encrypted,
     })
   );
+
+  const li = document.createElement("li");
+  li.textContent = `To [${recipientId}]: ${msg}`;
+  messages?.appendChild(li);
 }
 
 // Send public key request or send encrypted message if peer is known
