@@ -3,16 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>Secure E2EE Chat</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/avenir-next-cyr"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>E2EE Chat</h1>
-    <p>Your ID: <span id="myId">...</span></p>
-    <input type="text" id="recipientId" placeholder="Recipient ID" />
-    <textarea id="message" placeholder="Message..."></textarea><br />
-    <button id="sendBtn">Send</button>
+    <section>
+      <h1>E2EE Chat</h1>
+      <p>Your ID: <span id="myId">...</span></p>
+    </section>
 
-    <h2>Messages</h2>
-    <ul id="messages"></ul>
+    <section>
+      <input type="text" id="recipientId" placeholder="Recipient ID" />
+      <input id="message" placeholder="Message..." />
+      <button id="sendBtn">Send</button>
+    </section>
+
+    <section>
+      <h2>Messages</h2>
+      <div id="messages" class="messages"></div>
+    </section>
 
     <script src="./js/script.js"></script>
   </body>

@@ -137,9 +137,9 @@ ws.onmessage = async (event: MessageEvent) => {
       peers.get(senderId)!.sharedKey,
       msg.ciphertext
     );
-    const li = document.createElement("li");
-    li.textContent = `[${senderId}]: ${plaintext}`;
-    messages?.appendChild(li);
+    const message = document.createElement("div");
+    message.textContent = `[${senderId}]: ${plaintext}`;
+    messages?.appendChild(message);
   }
 };
 
@@ -158,9 +158,11 @@ async function sendMessage(recipientId: string): Promise<void> {
     })
   );
 
-  const li = document.createElement("li");
-  li.textContent = `To [${recipientId}]: ${msg}`;
-  messages?.appendChild(li);
+  messageInput.value = "";
+
+  const message = document.createElement("div");
+  message.textContent = `To [${recipientId}]: ${msg}`;
+  messages?.appendChild(message);
 }
 
 // Send public key request or send encrypted message if peer is known
